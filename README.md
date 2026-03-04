@@ -4,6 +4,8 @@
 
 ![Home Screen](screenshots/01_home.png)
 
+🔗 **Live Demo:** [https://flash-sagittario.github.io/Edunet---AI-Powered-Study-Buddy/](https://flash-sagittario.github.io/Edunet---AI-Powered-Study-Buddy/)
+
 ---
 
 ## 🎯 Problem Statement
@@ -39,6 +41,34 @@ Students often struggle to understand complex concepts while studying independen
 
 ### 🧠 Quiz Me
 ![Quiz Feature](screenshots/05_quiz.png)
+
+---
+
+## 🔑 How to Get Your Free API Key
+
+This app uses the **Anthropic Claude AI API**. Each user needs their own free API key — it takes 2 minutes to get one.
+
+### Step-by-step:
+
+1. Go to 👉 **[console.anthropic.com](https://console.anthropic.com)**
+2. Click **"Sign Up"** and create a free account
+3. Once logged in, click **"API Keys"** in the left sidebar
+4. Click **"Create Key"** → give it any name → copy the key
+5. The key looks like: `sk-ant-api03-xxxxxxxxxxxxxx`
+6. Open the app → when prompted, **paste your key** → done!
+
+> 💡 **Your key is only stored in your browser tab** — it's never saved to any server or file. You'll need to re-enter it each time you open the app.
+
+> 🆓 **Free tier is enough** — Anthropic gives free credits on signup, which is plenty for using this app.
+
+---
+
+## 🚀 Using the Live App
+
+1. Open 👉 [https://flash-sagittario.github.io/Edunet---AI-Powered-Study-Buddy/](https://flash-sagittario.github.io/Edunet---AI-Powered-Study-Buddy/)
+2. A prompt will appear asking for your Anthropic API key
+3. Paste your key (from the steps above)
+4. Start studying! 🎉
 
 ---
 
@@ -173,9 +203,7 @@ Rendered in UI  →  Text / Summary / Flip Cards / MCQ Quiz
 - 🎙️ Voice input/output for hands-free studying
 - 🌐 Multi-language support for regional accessibility
 - 📄 Upload PDF or image notes for AI summarization
-- 🔁 Spaced repetition flashcard review scheduler
 - 👤 User accounts with progress & score history
-- 🏫 LMS integration (Google Classroom, Moodle)
 
 ---
 
