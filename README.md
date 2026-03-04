@@ -190,17 +190,10 @@ Rendered in UI  →  Text / Summary / Flip Cards / MCQ Quiz
 
 ## 👩‍💻 Author
 
-**M Nanthini**
-- 🏫 College: XYZ | Department: CSE
+**Rohnit Jethwa**
+- 🏫 College: SMIT | Department: IT
 - 📌 EduNet Internship — Capstone Project
-- 🔗 GitHub: [@yourusername](https://github.com/yourusername)
+- 🔗 GitHub: [@flash-sagittario](https://github.com/flash-sagittario)
 
 ---
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
-
-<p align="center">Made with ❤️ as part of the EduNet Internship Program</p>
