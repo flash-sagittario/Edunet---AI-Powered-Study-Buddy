@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudyBuddy AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,800;1,300;1,600&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="static/css/style.css"/>
+</head>
+<body>
+<div class="app">
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="logo">Study<span>Buddy</span></div>
+    <div class="logo-sub">AI-Powered Learning</div>
+    <button class="nav-btn active" onclick="show('home')" id="nav-home"><span class="nav-icon">🏠</span> Home</button>
+    <button class="nav-btn" onclick="show('explain')" id="nav-explain"><span class="nav-icon">💡</span> Explain Topic</button>
+    <button class="nav-btn" onclick="show('summarize')" id="nav-summarize"><span class="nav-icon">📝</span> Summarize Notes</button>
+    <button class="nav-btn" onclick="show('flashcards')" id="nav-flashcards"><span class="nav-icon">🃏</span> Flashcards</button>
+    <button class="nav-btn" onclick="show('quiz')" id="nav-quiz"><span class="nav-icon">🧠</span> Quiz Me</button>
+    <div class="sidebar-footer">EduNet Internship Project</div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+
+    <!-- HOME -->
+    <div class="page active" id="page-home">
+      <div class="home-hero">
+        <div class="hero-title">Your personal<br><em>AI Study Buddy</em></div>
+        <div class="hero-sub">Understand any topic, summarize notes,<br>generate flashcards &amp; quizzes — instantly.</div>
+      </div>
+      <div class="home-grid">
+        <div class="home-card" onclick="show('explain')">
+          <div class="hc-icon">💡</div>
+          <div class="hc-title">Explain a Topic</div>
+          <div class="hc-desc">Get any complex concept broken down in simple, clear language.</div>
+        </div>
+        <div class="home-card" onclick="show('summarize')">
+          <div class="hc-icon">📝</div>
+          <div class="hc-title">Summarize Notes</div>
+          <div class="hc-desc">Paste your study notes and get a concise, structured summary.</div>
+        </div>
+        <div class="home-card" onclick="show('flashcards')">
+          <div class="hc-icon">🃏</div>
+          <div class="hc-title">Make Flashcards</div>
+          <div class="hc-desc">Auto-generate flip flashcards to reinforce key concepts.</div>
+        </div>
+        <div class="home-card" onclick="show('quiz')">
+          <div class="hc-icon">🧠</div>
+          <div class="hc-title">Quiz Me</div>
+          <div class="hc-desc">Test your knowledge with AI-generated multiple choice questions.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPLAIN -->
+    <div class="page" id="page-explain">
+      <div class="page-eyebrow" style="color:var(--teal)">💡 Explain Topic</div>
+      <div class="page-title">What do you want to understand?</div>
+      <div class="page-desc">Type any topic or concept — from photosynthesis to blockchain — and get a crystal-clear explanation.</div>
+      <div class="input-card">
+        <div class="input-label">Topic or concept</div>
+        <input type="text" id="explain-input" placeholder="e.g. How does Newton's third law work?"/>
+        <div class="input-label" style="margin-top:14px">Explain it like I am a…</div>
+        <div class="options-row" id="explain-level">
+          <button class="opt-chip sel" data-val="10-year-old">Kid (10 yrs)</button>
+          <button class="opt-chip" data-val="high school student">High Schooler</button>
+          <button class="opt-chip" data-val="college student">College Student</button>
+          <button class="opt-chip" data-val="domain expert">Expert</button>
+        </div>
+        <button class="run-btn" onclick="runExplain()">✦ Explain it</button>
+      </div>
+      <div class="output-card" id="explain-out">
+        <div class="output-header">
+          <span class="output-label">AI Explanation</span>
+          <button class="copy-btn" onclick="copyText('explain-body')">Copy ↗</button>
+        </div>
+        <div class="loading" id="explain-load"><div class="dots"><span></span><span></span><span></span></div><br>Thinking…</div>
+        <div class="output-body" id="explain-body"></div>
+      </div>
+    </div>
+
+    <!-- SUMMARIZE -->
+    <div class="page" id="page-summarize">
+      <div class="page-eyebrow" style="color:var(--amber)">📝 Summarize Notes</div>
+      <div class="page-title">Paste your study notes</div>
+      <div class="page-desc">Drop in your notes, textbook paragraphs, or any long text — get back a clean, structured summary.</div>
+      <div class="input-card">
+        <div class="input-label">Your notes</div>
+        <textarea id="summarize-input" placeholder="Paste your notes or text here…"></textarea>
+        <div class="input-label" style="margin-top:14px">Summary style</div>
+        <div class="options-row" id="summarize-style">
+          <button class="opt-chip sel" data-val="bullet points">Bullet Points</button>
+          <button class="opt-chip" data-val="short paragraph">Short Paragraph</button>
+          <button class="opt-chip" data-val="key terms with definitions">Key Terms</button>
+        </div>
+        <button class="run-btn" onclick="runSummarize()">✦ Summarize</button>
+      </div>
+      <div class="output-card" id="summarize-out">
+        <div class="output-header">
+          <span class="output-label">Summary</span>
+          <button class="copy-btn" onclick="copyText('summarize-body')">Copy ↗</button>
+        </div>
+        <div class="loading" id="summarize-load"><div class="dots"><span></span><span></span><span></span></div><br>Summarizing…</div>
+        <div class="output-body" id="summarize-body"></div>
+      </div>
+    </div>
+
+    <!-- FLASHCARDS -->
+    <div class="page" id="page-flashcards">
+      <div class="page-eyebrow" style="color:var(--violet)">🃏 Flashcards</div>
+      <div class="page-title">Generate flashcards</div>
+      <div class="page-desc">Enter a topic or paste notes. Flip cards to reveal answers — click any card to flip it!</div>
+      <div class="input-card">
+        <div class="input-label">Topic or notes</div>
+        <textarea id="flash-input" placeholder="e.g. The water cycle, or paste notes about the French Revolution…" style="min-height:80px"></textarea>
+        <div class="options-row" id="flash-count">
+          <button class="opt-chip sel" data-val="4">4 cards</button>
+          <button class="opt-chip" data-val="6">6 cards</button>
+          <button class="opt-chip" data-val="8">8 cards</button>
+        </div>
+        <button class="run-btn" onclick="runFlashcards()">✦ Generate Cards</button>
+      </div>
+      <div class="output-card" id="flash-out">
+        <div class="output-header">
+          <span class="output-label">Flashcards — click to flip</span>
+        </div>
+        <div class="loading" id="flash-load"><div class="dots"><span></span><span></span><span></span></div><br>Creating cards…</div>
+        <div class="flashcard-grid" id="flash-grid"></div>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="page" id="page-quiz">
+      <div class="page-eyebrow" style="color:var(--rose)">🧠 Quiz Me</div>
+      <div class="page-title">Test your knowledge</div>
+      <div class="page-desc">Enter a topic and get instant multiple-choice questions. Select your answer to see if you're right!</div>
+      <div class="input-card">
+        <div class="input-label">Topic or notes</div>
+        <textarea id="quiz-input" placeholder="e.g. Photosynthesis, World War II, Algebra basics…" style="min-height:80px"></textarea>
+        <div class="options-row" id="quiz-count">
+          <button class="opt-chip sel" data-val="3">3 questions</button>
+          <button class="opt-chip" data-val="5">5 questions</button>
+          <button class="opt-chip" data-val="7">7 questions</button>
+        </div>
+        <button class="run-btn" onclick="runQuiz()">✦ Start Quiz</button>
+      </div>
+      <div class="output-card" id="quiz-out">
+        <div class="output-header">
+          <span class="output-label">Quiz</span>
+          <span id="quiz-score-bar" style="font-size:12px;color:var(--muted);font-weight:700"></span>
+        </div>
+        <div class="loading" id="quiz-load"><div class="dots"><span></span><span></span><span></span></div><br>Writing questions…</div>
+        <div class="quiz-wrap" id="quiz-wrap"></div>
+        <div class="quiz-score" id="quiz-score-panel">
+          <div class="score-num" id="score-num">0/0</div>
+          <div class="score-label">Great effort! Keep practising 🎉</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="static/js/app.js"></script>
+</body>
+</html>
