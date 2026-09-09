@@ -25,25 +25,6 @@ Students often struggle to understand complex concepts while studying independen
 
 ---
 
-## 📸 Screenshots
-
-### 🏠 Home
-![Home Page](screenshots/01_home.png)
-
-### 💡 Explain Topic
-![Explain Feature](screenshots/02_explain.png)
-
-### 📝 Summarize Notes
-![Summarize Feature](screenshots/03_summarize.png)
-
-### 🃏 Flashcards
-![Flashcards Feature](screenshots/04_flashcards.png)
-
-### 🧠 Quiz Me
-![Quiz Feature](screenshots/05_quiz.png)
-
----
-
 ## 🔑 How to Get Your Free API Key
 
 This app uses the **Anthropic Claude AI API**. Each user needs their own free API key — it takes 2 minutes to get one.
@@ -198,15 +179,6 @@ Rendered in UI  →  Text / Summary / Flip Cards / MCQ Quiz
 
 ---
 
-## 🔮 Future Scope
-
-- 🎙️ Voice input/output for hands-free studying
-- 🌐 Multi-language support for regional accessibility
-- 📄 Upload PDF or image notes for AI summarization
-- 👤 User accounts with progress & score history
-
----
-
 ## 🙌 Acknowledgements
 
 - [Anthropic](https://www.anthropic.com) — Claude AI API
@@ -214,14 +186,4 @@ Rendered in UI  →  Text / Summary / Flip Cards / MCQ Quiz
 - [MDN Web Docs](https://developer.mozilla.org) — Frontend reference
 - EduNet Foundation — Internship Program
 
----
-
-## 👩‍💻 Author
-
-**Rohnit Jethwa**
-- 🏫 College: SMIT | Department: IT
-- 📌 EduNet Internship — Capstone Project
-- 🔗 GitHub: [@flash-sagittario](https://github.com/flash-sagittario)
-
----
 ---
